@@ -1,7 +1,6 @@
 import pandas as pd
 from matplotlib import pyplot as plt
 
-#TEST
 class Visitors():
     def __init__(self):
         xls = pd.ExcelFile("Project_File.xlsx")
