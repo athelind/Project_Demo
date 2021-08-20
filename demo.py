@@ -92,8 +92,8 @@ class Visitors():
         print("\n" + self.thirdCountry)
         print(self.thirdTopVisitorCnt)
 
-test = Visitors()
+# test = Visitors()
 # #test.generate2000MalaysiaAvg()
 # test.makeMalaysia2000LineChart()
-test.getTop3Countries()
+# test.getTop3Countries()
 # print(test.getMalaysia2000VisitorCount())
