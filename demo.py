@@ -2,6 +2,13 @@ import pandas as pd
 from matplotlib import pyplot as plt
 
 class Visitors():
+    topVisitorCnt = 0
+    topCountry = ""
+    secondTopVisitorCnt = 0
+    secondCountry = ""
+    thirdTopVisitorCnt = 0
+    thirdCountry = ""
+
     def __init__(self):
         xls = pd.ExcelFile("Project_File.xlsx")
         print(xls)
@@ -62,9 +69,32 @@ class Visitors():
 
         return malaysia2000["Malaysia"].sum()
 
+    def getTop3Countries(self):
+        for country in self.myColNames:
 
+            if country != "MonthYear":
+                # print(country)
+                # print(self.mydata[country].sum())
 
-# test = Visitors()
+                if self.mydata[country].sum() > self.topVisitorCnt:
+                    self.topVisitorCnt = self.mydata[country].sum()
+                    self.topCountry = country
+                elif self.mydata[country].sum() > self.secondTopVisitorCnt:
+                    self.secondTopVisitorCnt = self.mydata[country].sum()
+                    self.secondCountry = country
+                elif self.mydata[country].sum() > self.thirdTopVisitorCnt:
+                    self.thirdTopVisitorCnt = self.mydata[country].sum()
+                    self.thirdCountry = country
+
+        print("\n" + self.topCountry)
+        print(self.topVisitorCnt)
+        print("\n" + self.secondCountry)
+        print(self.secondTopVisitorCnt)
+        print("\n" + self.thirdCountry)
+        print(self.thirdTopVisitorCnt)
+
+test = Visitors()
 # #test.generate2000MalaysiaAvg()
 # test.makeMalaysia2000LineChart()
+test.getTop3Countries()
 # print(test.getMalaysia2000VisitorCount())
