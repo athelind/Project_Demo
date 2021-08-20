@@ -32,7 +32,6 @@ class Visitors():
         # print("\nRemove Years less than 2000")
         #print(self.mydata)
 
-
         self.mydata = self.mydata[self.mydata["Year"].astype(int) <= 2001]
         # print("\nRemove Years more than 2001")
         #print(self.mydata)
